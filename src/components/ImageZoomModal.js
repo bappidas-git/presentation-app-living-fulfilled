@@ -45,7 +45,7 @@ const ImageZoomModal = ({ isOpen, onClose, imageUrl, title }) => {
         const calculatedFitScale = Math.min(scaleX, scaleY, 1); // Don't scale up beyond 100%
 
         setFitScale(calculatedFitScale);
-        setScale(calculatedFitScale);
+        setScale(1); // Start at 100% zoom
         setPosition({ x: 0, y: 0 });
       };
       img.src = imageUrl;
