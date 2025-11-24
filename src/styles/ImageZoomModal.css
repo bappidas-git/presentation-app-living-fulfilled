@@ -51,6 +51,11 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
+.fit-btn:hover {
+  background: #28a745;
+  color: white;
+}
+
 .reset-btn:hover {
   background: var(--secondary-color);
   color: white;
