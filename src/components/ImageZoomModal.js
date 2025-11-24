@@ -279,14 +279,6 @@ const ImageZoomModal = ({ isOpen, onClose, imageUrl, title }) => {
             </button>
 
             <button
-              onClick={handleFitToWindow}
-              className="zoom-btn fit-btn"
-              title="Fit to Window (F key)"
-            >
-              ⬜ Fit
-            </button>
-
-            <button
               onClick={handleReset}
               className="zoom-btn reset-btn"
               title="Reset to 100% (0 key)"
@@ -342,27 +334,6 @@ const ImageZoomModal = ({ isOpen, onClose, imageUrl, title }) => {
               />
             </div>
           </div>
-
-          {/* Hints */}
-          {canPan && (
-            <motion.div
-              className="zoom-hint"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              💡 Drag to pan | Scroll to zoom | F to fit | ESC to close
-            </motion.div>
-          )}
-
-          {!canPan && (
-            <motion.div
-              className="zoom-hint"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              💡 Scroll or use buttons to zoom | F to fit | ESC to close
-            </motion.div>
-          )}
         </motion.div>
       )}
     </AnimatePresence>
