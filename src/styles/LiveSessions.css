@@ -1,0 +1,266 @@
+.live-sessions {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef3 100%);
+}
+
+.sessions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sessions-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sessions-content-new {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Coach Card Styles */
+.coach-card {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  position: sticky;
+  top: 120px;
+}
+
+.coach-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.coach-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.coach-card:hover .coach-image {
+  transform: scale(1.05);
+}
+
+.coach-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.coach-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.coach-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.coach-title {
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+/* Session Details Styles */
+.sessions-details-new {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.session-block {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.session-block:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.highlight-block {
+  background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%);
+  border-left: 4px solid var(--secondary-color);
+}
+
+.session-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.mb-small {
+  margin-bottom: 1.25rem;
+}
+
+/* Bullet List Styles */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.bullet-item:hover {
+  background: rgba(44, 95, 124, 0.03);
+  transform: translateX(5px);
+}
+
+/* SVG Bullet Icon Styles */
+.bullet-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.bullet-item:hover .bullet-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Bullet Content Styles */
+.bullet-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.bullet-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(44, 95, 124, 0.3);
+}
+
+.bullet-text {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sessions-content-new {
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+  }
+
+  .coach-card {
+    position: static;
+  }
+
+  .coach-image-wrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sessions-content-new {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .coach-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .session-block {
+    padding: 1.5rem;
+  }
+
+  .session-subtitle {
+    font-size: 1rem;
+  }
+
+  .bullet-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sessions-details-new {
+    gap: 1.5rem;
+  }
+
+  .session-block {
+    padding: 1.25rem;
+  }
+
+  .bullet-item {
+    gap: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .bullet-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .bullet-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.875rem;
+  }
+
+  .bullet-text {
+    font-size: 0.95rem;
+  }
+
+  .session-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+.live-sessions.standalone-mode,
+.outcomes-section.standalone-mode,
+.modules-section.standalone-mode,
+.evidence-section.standalone-mode {
+  margin: 0;
+  border-radius: 0;
+}

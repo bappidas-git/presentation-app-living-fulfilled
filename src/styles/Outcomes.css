@@ -1,0 +1,299 @@
+/* Outcomes.css - With Video Player Styles */
+
+.outcomes-section {
+  background: white;
+}
+
+.outcomes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  place-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.outcome-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.outcome-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.outcome-card:hover::before {
+  transform: scaleX(1);
+}
+
+.outcome-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.outcome-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  color: white;
+  transition: var(--transition);
+}
+
+.outcome-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.outcome-card p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.click-hint {
+  display: inline-block;
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+.outcome-card:hover .click-hint {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* PDF Viewer */
+.pdf-viewer {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-iframe {
+  width: 100%;
+  height: 70vh;
+  border: none;
+  border-radius: 8px;
+  background: #f5f5f5;
+}
+
+/* Excel Preview */
+.excel-preview {
+  text-align: center;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.excel-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.excel-preview h3 {
+  font-size: 1.75rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.excel-description {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.download-btn {
+  display: inline-block;
+  background: var(--accent-color);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.download-btn:hover {
+  background: #388e3c;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.excel-note {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  font-style: italic;
+  max-width: 400px;
+}
+
+/* Video Viewer Styles */
+.video-viewer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-video {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  border-radius: 8px;
+  background: #000;
+  outline: none;
+}
+
+.modal-video:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.video-info {
+  padding: 1rem;
+  background: var(--bg-light);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.video-description {
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Video Controls Styling */
+video::-webkit-media-controls-panel {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-timeline {
+  filter: brightness(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .outcomes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .outcome-card {
+    padding: 2rem;
+  }
+
+  .excel-preview {
+    padding: 2rem 1rem;
+  }
+
+  .excel-icon {
+    font-size: 4rem;
+  }
+
+  .modal-iframe,
+  .modal-video {
+    height: 60vh;
+  }
+
+  .video-info {
+    padding: 0.75rem;
+  }
+
+  .video-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .outcome-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .outcome-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .modal-video {
+    max-height: 50vh;
+  }
+}
+
+/* Standalone Mode */
+.outcomes-section.standalone-mode {
+  margin: 0;
+  border-radius: 0;
+}
+
+.excel-embed-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+}
+
+.excel-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.excel-actions {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.download-btn-small {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.download-btn-small:hover {
+  background-color: #45a049;
+}

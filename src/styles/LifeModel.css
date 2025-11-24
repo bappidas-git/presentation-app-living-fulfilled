@@ -1,0 +1,77 @@
+/* LifeModel.css */
+
+.life-model-section {
+  background: white;
+}
+
+.life-model-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.life-model-preview {
+  max-width: 800px;
+  margin: 0 auto;
+  cursor: pointer;
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.life-model-preview:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.life-model-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.life-model-preview:hover img {
+  transform: scale(1.02);
+}
+
+.preview-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(44, 95, 124, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.life-model-preview:hover .preview-overlay {
+  opacity: 1;
+}
+
+.preview-overlay span {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .life-model-preview {
+    max-width: 100%;
+  }
+  
+  .preview-overlay span {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .preview-overlay span {
+    font-size: 1rem;
+  }
+}
